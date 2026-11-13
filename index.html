@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- DÜZENLE: Sayfa başlığı ve SEO açıklaması -->
+  <title>Beyzanur Şengezer — Özgeçmiş & Portfolyo</title>
+  <meta name="description" content="Beyzanur Şengezer kişisel özgeçmiş (CV) ve portfolyo sayfası." />
+  <meta property="og:title" content="Beyzanur Şengezer — CV" />
+  <meta property="og:description" content="Beyzanur Şengezer kişisel özgeçmiş ve portfolyo sayfası." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-primary: #faf8f5;
+      --bg-card: #ffffff;
+      --bg-subtle: #f2efe9;
+      --text-primary: #18181b;
+      --text-secondary: #52525b;
+      --text-muted: #71717a;
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.09);
+      --border: #e4e1da;
+      --shadow-sm: 0 1px 3px rgba(24, 24, 27, 0.04);
+      --shadow-md: 0 10px 30px -10px rgba(24, 24, 27, 0.07);
+      --radius: 14px;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #0f1115;
+      --bg-card: #161920;
+      --bg-subtle: #1e222b;
+      --text-primary: #f4f4f5;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #2dd4bf;
+      --accent-soft: rgba(45, 212, 191, 0.12);
+      --border: #262a34;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 12px 32px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      font-size: 15.5px;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    /* Üst Araç Çubuğu */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--bg-primary) 82%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    [data-theme="dark"] .btn-primary {
+      color: #091312;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      color: #ffffff;
+    }
+
+    [data-theme="dark"] .btn-primary:hover {
+      color: #091312;
+    }
+
+    /* Ana Konteyner */
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* Hero / Üst Profil Kartı */
+    .hero-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 108px;
+      height: 108px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--accent), #115e59);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.75rem;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2.1rem, 4vw, 2.85rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-summary {
+      color: var(--text-secondary);
+      max-width: 72ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* İki Sütunlu Gövde */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .main-column,
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-title {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Deneyim & Eğitim Zaman Çizelgesi */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--border);
+    }
+
+    .timeline-item:hover {
+      border-left-color: var(--accent);
+    }
+
+    .item-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-role {
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--text-primary);
+    }
+
+    .item-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    .item-org {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .item-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .item-bullets li {
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .item-bullets li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Proje Kartları */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-box {
+      padding: 1.15rem;
+      border-radius: 10px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .project-box:hover {
+      border-color: var(--accent);
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-desc {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+    }
+
+    /* Etiketler / Yetenekler */
+    .skill-group {
+      margin-bottom: 1.1rem;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-group-title {
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.28rem 0.65rem;
+      border-radius: 6px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    /* Dil & Sertifika Listesi */
+    .simple-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .simple-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .simple-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .level-badge {
+      font-size: 0.76rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    /* Mobil Uyumluluk */
+    @media (max-width: 820px) {
+      .hero-card {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem;
+      }
+      .cv-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Yazdırma / PDF Çıktısı Ayarları */
+    @media print {
+      :root, [data-theme="dark"] {
+        --bg-primary: #ffffff;
+        --bg-card: #ffffff;
+        --bg-subtle: #f8f9fa;
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --text-muted: #555555;
+        --border: #dddddd;
+      }
+      body {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      .topbar, footer {
+        display: none !important;
+      }
+      .container {
+        padding: 0;
+        max-width: 100%;
+      }
+      .hero-card, .section-card {
+        box-shadow: none;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        break-inside: avoid;
+      }
+      .cv-grid {
+        grid-template-columns: 1fr 240px;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Üst Menü -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="brand">
+        <span class="brand-dot"></span>
+        <span>Beyzanur Şengezer</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#deneyim">Deneyim</a>
+        <a href="#egitim">Eğitim</a>
+        <a href="#projeler">Projeler</a>
+        <a href="#yetenekler">Yetenekler</a>
+      </nav>
+      <div class="actions">
+        <button class="btn" id="themeToggle" type="button" aria-label="Temayı değiştir">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Koyu</span>
+        </button>
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          PDF İndir
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- DÜZENLE: Kişisel Bilgiler & Özet -->
+    <section class="hero-card">
+      <!-- Profil fotoğrafı eklemek isterseniz BŞ yazısını silip <img src="profil.jpg" alt="Beyzanur Şengezer" /> ekleyebilirsiniz -->
+      <div class="avatar" aria-hidden="true">BŞ</div>
+
+      <div>
+        <div class="hero-header">
+          <h1 class="hero-name">Beyzanur Şengezer</h1>
+          <span class="status-badge">
+            <span class="status-dot"></span>
+            Yeni Fırsatlara Açık
+          </span>
+        </div>
+
+        <!-- DÜZENLE: Unvan / Meslek Başlığı -->
+        <p class="hero-title">Uzman / Proje & Süreç Yöneticisi (Örnek Unvan)</p>
+
+        <!-- DÜZENLE: Kısa Hakkımda Yazısı -->
+        <p class="hero-summary">
+          Analitik düşünme, proje koordinasyonu ve dijital süreç geliştirme alanlarında odaklanmış; disiplinlerarası ekiplerle uyumlu çalışan ve sonuç odaklı çözümler üreten profesyonel. Buradaki metni kendi kariyer hedefleriniz ve uzmanlık alanlarınıza göre güncelleyebilirsiniz.
+        </p>
+
+        <!-- DÜZENLE: İletişim Bağlantıları -->
+        <div class="contact-bar">
+          <a class="contact-pill" href="mailto:iletisim@beyzanursengezer.com">
+            ✉️ iletisim@beyzanursengezer.com
+          </a>
+          <span class="contact-pill">
+            📍 İstanbul, Türkiye
+          </span>
+          <a class="contact-pill" href="https://linkedin.com/in/beyzanursengezer" target="_blank" rel="noopener">
+            🔗 linkedin.com/in/beyzanursengezer
+          </a>
+          <a class="contact-pill" href="https://github.com/Bejzush" target="_blank" rel="noopener">
+            💻 github.com/Bejzush
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv-grid">
+      <!-- SOL SÜTUN: Deneyim, Eğitim, Projeler -->
+      <div class="main-column">
+
+        <!-- İŞ DENEYİMİ -->
+        <section id="deneyim" class="section-card">
+          <h2 class="section-title">İş Deneyimi</h2>
+          <div class="timeline">
+
+            <!-- Deneyim 1 -->
+            <article class="timeline-item">
+              <div class="item-header">
+                <h3 class="item-role">Kıdemli Uzman / Proje Sorumlusu (Placeholder)</h3>
+                <span class="item-date">2024 — Günümüz</span>
+              </div>
+              <div class="item-org">Örnek Teknoloji & Danışmanlık A.Ş. · İstanbul</div>
+              <ul class="item-bullets">
+                <li>Şirket içi operasyonel süreçlerin dijitalleştirilmesi ve verimliliğin %25 artırılmasına liderlik edildi.</li>
+                <li>Paydaş iletişimi, zaman planlaması ve kalite kontrol süreçleri uçtan uca yönetildi.</li>
+                <li>Haftalık performans raporları ve veri odaklı sunumlar hazırlandı.</li>
+              </ul>
+            </article>
+
+            <!-- Deneyim 2 -->
+            <article class="timeline-item">
+              <div class="item-header">
+                <h3 class="item-role">Uzman Yardımcısı (Placeholder)</h3>
+                <span class="item-date">2022 — 2024</span>
+              </div>
+              <div class="item-org">Global Çözümler Grubu · İstanbul (Hibrit)</div>
+              <ul class="item-bullets">
+                <li>Müşteri portföyü analizi ve yeni ürün lansman araştırmalarında aktif rol alındı.</li>
+                <li>Farklı departmanlar arası koordinasyon sağlanarak projelerin zamanında teslimi gerçekleştirildi.</li>
+              </ul>
+            </article>
+
+            <!-- Deneyim 3 -->
+            <article class="timeline-item">
+              <div class="item-header">
+                <h3 class="item-role">Stajyer (Placeholder)</h3>
+                <span class="item-date">Yaz 2021</span>
+              </div>
+              <div class="item-org">Yenilikçi Girişim Stüdyosu · Ankara</div>
+              <ul class="item-bullets">
+                <li>Pazar araştırması, rakip analizi ve dokümantasyon süreçlerine destek verildi.</li>
+              </ul>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- EĞİTİM -->
+        <section id="egitim" class="section-card">
+          <h2 class="section-title">Eğitim</h2>
+          <div class="timeline">
+
+            <!-- Eğitim 1 -->
+            <article class="timeline-item">
+              <div class="item-header">
+                <h3 class="item-role">Lisans Derecesi — Bölüm Adı (Placeholder)</h3>
+                <span class="item-date">2018 — 2022</span>
+              </div>
+              <div class="item-org">Örnek Üniversitesi · İktisadi ve İdari Bilimler / Mühendislik Fakültesi</div>
+              <ul class="item-bullets">
+                <li>Genel Not Ortalaması (GANO): 3.45 / 4.00 (Onur Öğrencisi)</li>
+                <li>Bitirme Projesi: Dijital Dönüşüm ve Sürdürülebilir İş Modelleri Analizi</li>
+              </ul>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- PROJELER & ÇALIŞMALAR -->
+        <section id="projeler" class="section-card">
+          <h2 class="section-title">Seçili Projeler & Çalışmalar</h2>
+          <div class="projects-grid">
+
+            <article class="project-box">
+              <div>
+                <h3 class="project-title">
+                  <span>Kurumsal Süreç Optimizasyonu</span>
+                  <span>↗</span>
+                </h3>
+                <p class="project-desc">
+                  İş akışlarını hızlandırmak ve raporlama sürelerini kısaltmak amacıyla geliştirilen iç kontrol ve otomasyon şablonu.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Süreç Analizi</span>
+                <span class="tag">Raporlama</span>
+              </div>
+            </article>
+
+            <article class="project-box">
+              <div>
+                <h3 class="project-title">
+                  <span>Veri Odaklı Kullanıcı Araştırması</span>
+                  <span>↗</span>
+                </h3>
+                <p class="project-desc">
+                  Kullanıcı geri bildirimlerinin sınıflandırılması ve ürün yol haritasına dönüştürülmesi üzerine kapsamlı vaka çalışması.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Araştırma</span>
+                <span class="tag">Strateji</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SAĞ SÜTUN: Yetenekler, Diller, Sertifikalar -->
+      <aside class="side-column">
+
+        <!-- YETENEKLER -->
+        <section id="yetenekler" class="section-card">
+          <h2 class="section-title">Yetkinlikler</h2>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Uzmanlık Alanları</div>
+            <div class="tags">
+              <span class="tag">Proje Yönetimi</span>
+              <span class="tag">Stratejik Planlama</span>
+              <span class="tag">Veri Analizi</span>
+              <span class="tag">Süreç Geliştirme</span>
+              <span class="tag">Sunum & Raporlama</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Araçlar & Yazılımlar</div>
+            <div class="tags">
+              <span class="tag">MS Office / Excel</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Jira / Trello</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Google Workspace</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Sosyal Yetkinlikler</div>
+            <div class="tags">
+              <span class="tag">Ekip İletişimi</span>
+              <span class="tag">Problem Çözme</span>
+              <span class="tag">Zaman Yönetimi</span>
+              <span class="tag">Adaptasyon</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- YABANCI DİLLER -->
+        <section class="section-card">
+          <h2 class="section-title">Yabancı Diller</h2>
+          <ul class="simple-list">
+            <li>
+              <span>Türkçe</span>
+              <span class="level-badge">Ana Dil</span>
+            </li>
+            <li>
+              <span>İngilizce</span>
+              <span class="level-badge">İleri (C1)</span>
+            </li>
+            <li>
+              <span>Almanca (Örnek)</span>
+              <span class="level-badge">Başlangıç (A2)</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- SERTİFİKALAR -->
+        <section class="section-card">
+          <h2 class="section-title">Sertifikalar</h2>
+          <ul class="simple-list">
+            <li>
+              <div>
+                <strong>Proje Yönetimi Temelleri</strong>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Coursera / Google · 2024</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>İleri Veri Analitiği</strong>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Online Akademi · 2023</div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Beyzanur Şengezer · Tüm hakları saklıdır.
+    </footer>
+  </main>
+
+  <script>
+    // Güncel yıl
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Açık / Koyu Tema Değiştirici
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('cv-theme');
+    if (savedTheme === 'dark') {
+      root.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'Açık';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('cv-theme', nextTheme);
+      themeIcon.textContent = nextTheme === 'dark' ? '☀️' : '🌙';
+      themeText.textContent = nextTheme === 'dark' ? 'Açık' : 'Koyu';
+    });
+  </script>
+</body>
+</html>
